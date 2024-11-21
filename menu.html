@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .menu-container {
+            text-align: center;
+            width: 100%;
+            max-width: 350px;
+        }
+        .menu-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .menu-container button:hover {
+            background-color: #45a049;
+        }
+        .menu {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+        }
+        .menu a {
+            display: block;
+            text-decoration: none;
+            background-color: white;
+            color: #4caf50;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        .menu a:hover {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <button id="toggleMenu">START</button>
+        <div class="menu" id="menu">
+            <a href="#link1">Link 1</a>
+            <a href="#link2">Link 2</a>
+            <a href="#link3">Link 3</a>
+            <a href="#link4">Link 4</a>
+            <a href="#link5">Link 5</a>
+            <a href="#link6">Link 6</a>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleMenu');
+        const menu = document.getElementById('menu');
+
+        toggleButton.addEventListener('click', () => {
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+                toggleButton.textContent = 'Select a task';
+            } else {
+                menu.style.display = 'none';
+                toggleButton.textContent = 'START';
+            }
+        });
+    </script>
+</body>
+</html>
